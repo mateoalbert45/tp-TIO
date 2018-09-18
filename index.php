@@ -1,3 +1,5 @@
+
+
 <?php
  include_once 'tareas.php';
  function home()
@@ -20,21 +22,31 @@
           <ul class="list-group">
 <?php
           foreach ($productos as $producto) {
-            echo '<li class="list-group-item">'.$producto['id_producto'].': '.$producto['nombre'].': '.$producto['talle'].': '.$producto['stock'].': '.$producto['id_marca'].'</li>';
+            echo '<li class="list-group-item">'.$producto['id_producto'].': '.$producto['nombre'].': '.$producto['talle'].': '.$producto['stock'].': '.$producto['id_marca'].'<a href="borrar/'.$producto['id_producto'].'">Borrar</a></li>';
           }
 
           foreach ($marcas as $marca) {
             echo '<li class="list-group-item">'.$marca['id_marca'].': '.$marca['nombre'].': '.$marca['descripcion'].'</li>';
           }
-
 ?>
           </ul>
+          <form method="post" action="agregar">
+            <div class="form-group">
+              <label for="nombreform">nombre</label>
+              <input type="text" class="form-control" id="nombreform" name="nombreform" placeholder="nombre de la marca">
+            </div>
+            <div class="form-group">
+              <label for="descripcionform">Descripcion</label>
+              <textarea  id="descripcionform" name="descripcionform" rows="8" cols="50"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Crear</button>
+          </form>
 
         </div>
        </div>
      </div><!-- /.container -->
   </body>
 </html>
-<?php }  ?>
-
+<?php
+}
 ?>
