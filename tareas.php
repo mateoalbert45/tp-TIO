@@ -28,20 +28,18 @@ function connect(){
   , 'root', '');
 }
 
-function insertTarea($nombre, $descripcion){
-  $nombre = $_POST["nombreform"];
-  $descripcion = $_POST["descripcionform"];
 
-  $db_marca = connect();
-  $sentencia_marca = $db_marca->prepare('INSERT INTO marca(nombre, descripcion) VALUES(?,?)');
-  $sentencia_marca->execute(array($nombre,$descripcion));
-  header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
-
-}
 function borrarproducto($id_producto){
   $db = connect();
-  $sentencia = $db->prepare( "delete from producto where id_producto=?");
+  $sentencia = $db->prepare( "delete from marca where id_marca=?");
   $sentencia->execute(array($id_producto));
+  header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+}
+
+function editarnombre($id_marca){
+  $db = connect();
+  $sentencia = $db->prepare( "update marca set nombre= where id=?");
+  $sentencia->execute(array($id_marca));
   header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 }
 

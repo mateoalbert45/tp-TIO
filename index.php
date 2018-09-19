@@ -26,7 +26,7 @@
           }
 
           foreach ($marcas as $marca) {
-            echo '<li class="list-group-item">'.$marca['id_marca'].': '.$marca['nombre'].': '.$marca['descripcion'].'</li>';
+            echo '<li class="list-group-item">'.$marca['id_marca'].': '.$marca['nombre'].': '.$marca['descripcion'].'<a href="borrar/'.$marca['id_marca'].'">Borrar</a><a href="editarnombre/'.$marca['id_marca'].'">   editar nombre</a></li>';
           }
 ?>
           </ul>

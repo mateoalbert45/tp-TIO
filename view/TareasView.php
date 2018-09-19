@@ -1,14 +1,12 @@
 <?php
 
-/**
- *
- */
+require_once "./controller/TareasController.php";
+
 class TareasView
 {
 
 
   function Mostrar($marcas, $productos){
-
      //$marcas = getMarca();
      //$productos = getProducto();
    ?>
@@ -54,13 +52,8 @@ class TareasView
    </html>
    <?php
    }
-   ?>
 
-  }
+
+
 }
-
-
-
-
-
  ?>
